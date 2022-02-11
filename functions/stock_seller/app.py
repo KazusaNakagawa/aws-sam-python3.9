@@ -33,5 +33,6 @@ def lambda_handler(event, context):
             randint(1, 10)
         ),  # Number of shares bought/sold (We are mocking this as a random integer between 1 and 10)
         "timestamp": datetime.now().isoformat(),  # Timestamp of the when the transaction was completed
+        "message": event["message"]
     }
     return transaction_result
