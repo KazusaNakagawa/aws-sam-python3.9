@@ -57,6 +57,17 @@ Resources:
       CodeUri: functions/stock_buyer/
       Handler: app.lambda_handler
       Runtime: python3.9
+      Events:
+        ApiRoot:
+          Type: Api
+          Properties:
+            Path: '/'
+            Method: ANY
+        ApiProxy:
+          Type: Api
+          Properties:
+            Path: '/{proxy+}'
+            Method: ANY
       Architectures:
         - x86_64
 
